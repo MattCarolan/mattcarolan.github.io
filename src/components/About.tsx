@@ -113,7 +113,7 @@ export default function About() {
                     New Book
                   </p>
                   <h4 className="text-bright font-bold text-3xl leading-snug mb-1 group-hover:text-accent transition-colors duration-200">
-                    <a href="https://5000days.net">5,000 Days</a>a>
+                    <a href="https://5000days.net">5,000 Days</a>
                   </h4>
                   <p className="font-mono text-xs text-dim">
                     by Matt Carolan
