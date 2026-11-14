@@ -1,3 +1,4 @@
+import { WhatsAppIcon, whatsappUrl } from "./SocialLinks";
 type Event = {
   name: string;
   role: string;
@@ -7,40 +8,58 @@ type Event = {
 
 const events: Event[] = [
   {
-    name: "Cloud Summit",
-    role: "Organizer & Speaker",
-    description:
-      "Co-organizer of Cloud Summit, bringing together cloud professionals from across the Pacific Northwest for a premier cloud computing conference.",
-    url: "https://cloudsummit.ca/",
+    "name": "Cloud Summit",
+    "role": "Organizer & Speaker",
+    "description": "Co-organizer of Cloud Summit, bringing together cloud professionals from across the Pacific Northwest for a premier cloud computing conference.",
+    "url": "https://cloudsummit.ca/"
   },
   {
-    name: "HackerRivals",
-    role: "Creator",
-    description:
-      "Creator of HackerRivals — the world's first esports-style hackathon, blending competitive coding with the energy and format of professional esports events.",
-    url: "https://hackerrivals.com/",
+    "name": "HackerRivals",
+    "role": "Creator",
+    "description": "Creator of HackerRivals - the world's first esports-style hackathon, blending competitive coding with the energy and format of professional esports events.",
+    "url": "https://hackerrivals.com/"
   },
   {
-    name: "AWS Community Day",
-    role: "Speaker & Leader",
-    description:
-      "Regular speaker and community leader at AWS Community Day events across Canada, driving education and connection in the AWS ecosystem.",
-    url: "https://www.awsday.ca/",
+    "name": "AWS Community Day",
+    "role": "Speaker & Leader",
+    "description": "Regular speaker and community leader at AWS Community Day events across Canada, driving education and connection in the AWS ecosystem.",
+    "url": "https://www.awsday.ca/"
   },
   {
-    name: "AWS User Groups",
-    role: "Leader",
-    description:
-      "Active leadership role in AWS User Groups, facilitating regular meetups that help practitioners share knowledge and advance their cloud skills.",
-    url: "https://awscanada.ca/",
+    "name": "AWS Summit Toronto",
+    "role": "Invited Speaker",
+    "description": "Invited by AWS to speak on the Developer Stage at its biggest Canadian conference of the year."
   },
   {
-    name: "Azure Canada User Group",
-    role: "Speaker & Community Builder",
-    description:
-      "Contributing speaker and community builder for the Azure Canada User Group, helping Microsoft Azure practitioners connect and grow.",
-    url: "https://www.azurecanada.ca/",
+    "name": "AWS User Group | Vancouver 2014 - 2026+",
+    "role": "Founder, Organizer and Speaker",
+    "description": "Building Vancouver's AWS community through regular meetups, shared knowledge and practical cloud learning.",
+    "url": "https://awscanada.ca/"
   },
+  {
+    "name": "Azure User Group | Vancouver 2015 - 2026+",
+    "role": "Founder, Organizer and Speaker",
+    "description": "Building Vancouver's Azure community through regular meetups, shared knowledge and practical cloud learning.",
+    "url": "https://www.azurecanada.ca/"
+  },
+  {
+    "name": "Global Summit AI Vancouver 2026",
+    "role": "Speaker & Moderator",
+    "description": "Spoke on production AI security and cost, and moderated a fireside conversation with NVIDIA's Bilal Kartal.",
+    "url": "https://globalsummit.ca/"
+  },
+  {
+    "name": "Cloud Native Vancouver",
+    "role": "Speaker",
+    "description": "Speaking on how cloud forced us to adapt, and what changes when AI adapts to us.",
+    "url": "https://luma.com/5e55u1u9"
+  },
+  {
+    "name": "The Future of Women: Money, Power & Influence",
+    "role": "Panelist",
+    "description": "Women in Tech Canada + Microsoft. Joined BC Finance Minister Brenda Bailey, Jennifer Charters (Cloud and AI Director, Microsoft Canada), and Judith Bosire (Chief Economist, Vancity) for a panel on money, power and influence.",
+    "url": "https://luma.com/future-of-women"
+  }
 ];
 
 const media = [
@@ -75,7 +94,7 @@ export default function Community() {
         Community &amp; Speaking
       </h2>
 
-      <div className="grid lg:grid-cols-2 gap-16">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-12">
         {/* Events */}
         <div>
           <h3 className="font-mono text-faint text-sm uppercase tracking-widest mb-6">
@@ -87,7 +106,7 @@ export default function Community() {
                 key={event.name}
                 className="border-l-2 border-surface2 hover:border-accent pl-6 transition-colors duration-300 group"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                <div className="event-heading">
                   {event.url ? (
                     <a
                       href={event.url}
@@ -107,7 +126,7 @@ export default function Community() {
                       {event.name}
                     </h4>
                   )}
-                  <span className="font-mono text-xs text-accent bg-accent/10 px-2 py-1 rounded self-start sm:self-auto">
+                  <span className="font-mono text-xs text-accent bg-accent/10 px-2 py-1 rounded self-start">
                     {event.role}
                   </span>
                 </div>
@@ -118,31 +137,10 @@ export default function Community() {
             ))}
           </div>
 
-          {/* Discord CTA */}
-          <div className="mt-8 bg-surface rounded-lg p-6 border border-surface2 hover:border-accent/30 transition-colors duration-300">
-            <div className="flex items-center gap-3 mb-3">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-accent flex-shrink-0">
-                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.003.022.015.04.032.05a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.04.001-.088-.041-.104a13.2 13.2 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
-              </svg>
-              <h4 className="text-bright font-semibold">Join the Community</h4>
-            </div>
-            <p className="text-muted text-sm leading-relaxed mb-4">
-              Connect with cloud professionals, ask questions, and stay up to
-              date with the latest in Cloud &amp; AI.
-            </p>
-            <a
-              href="https://discord.gg/wg372JtEK8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-sm text-accent hover:underline inline-flex items-center gap-2"
-            >
-              Join Discord Server
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
+          <div className="mt-8 bg-surface rounded-lg p-6 border border-surface2 hover:border-accent/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3 text-accent"><WhatsAppIcon /><h4 className="text-bright font-semibold">Join the WhatsApp Community</h4></div>
+            <p className="text-muted text-sm leading-relaxed mb-4">Connect with cloud professionals, ask questions, and stay up to date with Cloud &amp; AI.</p>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-accent hover:underline">Join WhatsApp Group ↗</a>
           </div>
         </div>
 

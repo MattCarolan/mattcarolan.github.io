@@ -14,11 +14,11 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Matt Carolan — Cloud & AI Technology Leader",
+  title: "Matt Carolan - Cloud & AI Technology Leader",
   description:
     "Matt Carolan is a Cloud & AI Technology Leader based in Vancouver, Canada. Microsoft MVP and Google Leader with 13+ years in cloud technology.",
   openGraph: {
-    title: "Matt Carolan — Cloud & AI Technology Leader",
+    title: "Matt Carolan - Cloud & AI Technology Leader",
     description:
       "Microsoft MVP and Google Leader enabling businesses globally to gain a competitive advantage with Cloud and AI.",
     url: "https://www.mattcarolan.com",

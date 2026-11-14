@@ -40,7 +40,7 @@ export default function About() {
             <span className="text-faint font-medium">Google Leader</span>, I
             bring deep multi-cloud expertise and a vendor-agnostic perspective
             to every engagement. I&apos;m passionate about making complex
-            technology accessible — whether that&apos;s through advisory work,
+            technology accessible - whether that&apos;s through advisory work,
             speaking, content creation, or community building.
           </p>
           <p>
@@ -69,62 +69,21 @@ export default function About() {
 
         {/* Stats card */}
         <div className="flex flex-col gap-4">
-          {/* Book announcement */}
-          <div className="bg-surface rounded-lg border border-accent/40 hover:border-accent/70 transition-colors duration-300 overflow-hidden group">
-            <div className="bg-accent/10 px-4 py-2 flex items-center justify-between border-b border-accent/20">
-              <span className="font-mono text-accent text-xs uppercase tracking-widest font-medium">
-                Cloud, AI, Culture, History, Future
-              </span>
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="text-accent"
-              >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
-            <div className="p-5">
-              <div className="flex gap-4 items-start">
-                {/* Mini book spine */}
-                <div className="flex-shrink-0 w-12 rounded flex flex-col items-center justify-start border border-accent/30 bg-navy shadow-md shadow-accent/10 pt-3 pb-4 px-1.5 gap-1.5">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-accent"
-                  >
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                  </svg>
-                  <div className="w-6 h-px bg-accent/40" />
-                  <div className="w-4 h-px bg-accent/25" />
-                  <div className="w-5 h-px bg-accent/25" />
-                  <div className="w-3 h-px bg-accent/20" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="font-mono text-sm text-accent uppercase tracking-wider mb-1">
-                    New Book
-                  </p>
-                  <h4 className="text-bright font-bold text-3xl leading-snug mb-1 group-hover:text-accent transition-colors duration-200">
-                    <a href="https://5000days.net">5,000 Days</a>
-                  </h4>
-                  <p className="font-mono text-xs text-dim">
-                    by Matt Carolan
-                  </p>
-                </div>
+          <div className="book-card">
+            <div className="book-eyebrow">Cloud, AI, Culture, History, Future <span aria-hidden="true">✦</span></div>
+            <div className="book-layout">
+              <a href="https://5000days.net/" target="_blank" rel="noopener noreferrer" className="book-object" aria-label="Explore 5,000 Days">
+                <span className="book-spine" aria-hidden="true">5,000 DAYS <small>MATT CAROLAN</small></span>
+                <img src="/assets/book-cover.jpg" alt="5,000 Days: Cloud, AI, Culture, History & Future, by Matt Carolan - original front cover." width="800" height="1199" loading="lazy" />
+              </a>
+              <div className="book-details">
+                <p className="font-mono text-accent text-xs uppercase tracking-wider mb-2">New Book</p>
+                <h3 className="text-bright text-3xl font-bold mb-1">5,000 Days</h3>
+                <p className="font-mono text-xs text-faint mb-4">by Matt Carolan</p>
+                <p className="text-muted text-sm leading-relaxed">Stories, mistakes, and insights from technological disruption. How to adapt to change.</p>
+                <p className="book-bestseller">#1 Best Seller on Amazon</p>
+                <a href="https://5000days.net/" target="_blank" rel="noopener noreferrer" className="outline-button book-button">Explore the Book</a>
               </div>
-              <p className="text-muted text-xs leading-relaxed mt-4 border-t border-surface2 pt-4">
-                Stories, mistakes, and insights from technological disruption.
-                How to adapt to change.
-                #1 Best Seller on Amazon
-              </p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">

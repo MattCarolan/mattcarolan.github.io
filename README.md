@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MattCarolan.com
 
-## Getting Started
+Personal portfolio for Matt Carolan, built with Next.js and published to GitHub Pages.
 
-First, run the development server:
+## Develop and build
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Run `npm ci` and `npm run dev`.
+- Run `npm run build` for the static export in `out/`.
+- Pushes to `main` run the existing GitHub Pages deployment workflow.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Artwork and design
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The original `public/1.jpeg` is reused without redrawing or stretching the character. SVG clips animate only the right foot and jacket hems; reduced-motion preferences show the unchanged still image. Keep the original file and its 16:9 aspect ratio.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The book uses the supplied front cover at `public/assets/book-cover.jpg`, with a CSS spine. No page block is shown. Brookfield uses the supplied white wordmark on a blue square at `public/assets/brookfield.png`.
 
-## Learn More
+## Contact form
 
-To learn more about Next.js, take a look at the following resources:
+All email icons, the right-side address, Get In Touch and Say Hello open one native dialog. Submissions use FormSubmit's AJAX endpoint for `matt@mattcarolan.net`, with required fields, a honeypot, timeout, and success/error feedback. Visitors do not need an email client.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+FormSubmit may require recipient activation. Verify activation and an actual received submission before treating email delivery as confirmed. Browser QA checks the dialog and validation without sending test mail.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## November 2026 implementation
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Updated experience descriptions, consistent horizontal company headers, North America AWS recognition, Vancouver user group dates and founder/organizer/speaker roles, AWS Summit Toronto and other speaking engagements, WhatsApp links, book presentation, hero spacing and mobile navigation.

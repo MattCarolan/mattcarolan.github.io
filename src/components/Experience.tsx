@@ -5,7 +5,7 @@ const clients = [
     name: "NASA",
     category: "Aerospace & Government",
     description:
-      "Delivered cloud strategy and architecture consulting for one of the world's most mission-critical organizations.",
+      "Helped establish accountability for cloud spend during NASA's early adoption of AWS.",
     url: "https://www.nasa.gov",
     logo: "/logos/nasa.svg",
   },
@@ -13,7 +13,7 @@ const clients = [
     name: "Deutsche Bank",
     category: "Financial Services",
     description:
-      "Guided cloud migration and modernization initiatives for a global financial institution with strict compliance requirements.",
+      "Shaped a strategy balancing U.S. operational independence with the ability to respond to global organizational directives.",
     url: "https://www.db.com",
     logo: "/logos/deutschebank.png",
   },
@@ -29,15 +29,15 @@ const clients = [
     name: "Brookfield",
     category: "Asset Management",
     description:
-      "Partnered on cloud infrastructure and AI adoption strategies for one of the world's largest alternative asset managers.",
+      "Supported the migration of three data centers to the cloud.",
     url: "https://www.brookfield.com",
-    logo: "/logos/brookfield.png",
+    logo: "/assets/brookfield.png",
   },
   {
     name: "WorkSafeBC",
     category: "Public Sector",
     description:
-      "Led cloud enablement and digital transformation initiatives to modernize critical public-sector services in British Columbia.",
+      "Supported cloud migration and helped address a fragmented landscape of container platforms and operating approaches.",
     url: "https://www.worksafebc.com",
     logo: "/logos/worksafebc.jpg",
   },
@@ -45,7 +45,7 @@ const clients = [
     name: "BlueCross BlueShield",
     category: "Healthcare",
     description:
-      "Enabled secure, compliant cloud adoption for one of the largest healthcare insurance providers in North America.",
+      "Advised on data privacy and HIPAA-compliant data pipelines across cloud and hybrid environments.",
     url: "https://www.bcbs.com",
     logo: "/logos/bcbs.png",
   },
@@ -77,28 +77,11 @@ export default function Experience() {
             rel="noopener noreferrer"
             className="bg-surface rounded-lg p-6 border border-surface2 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 group flex flex-col"
           >
-            <div className="flex items-start justify-between mb-5">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
-                <Image
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <span className="font-mono text-xs text-muted bg-surface2 px-2 py-1 rounded">
-                {client.category}
-              </span>
+            <div className="experience-category"><span>{client.category}</span></div>
+            <div className="experience-header">
+              <Image src={client.logo} alt={client.name + " logo"} width={44} height={44} className="experience-logo" />
+              <h3 className="text-bright font-bold text-lg group-hover:text-accent transition-colors">{client.name}</h3>
             </div>
-            <h3 className="text-bright font-bold text-xl mb-3 group-hover:text-accent transition-colors duration-200 flex items-center gap-2">
-              {client.name}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </h3>
             <p className="text-muted text-sm leading-relaxed mt-auto">
               {client.description}
             </p>

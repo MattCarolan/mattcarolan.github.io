@@ -6,7 +6,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Recognition", href: "#recognition" },
-  { label: "Community", href: "#community" },
+  { label: "Community & Speaking", href: "#community" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -50,7 +50,7 @@ export default function Nav() {
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link, i) => (
               <a
                 key={link.href}
@@ -73,7 +73,7 @@ export default function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-accent p-2 -mr-2"
+            className="lg:hidden text-accent p-2 -mr-2"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
@@ -96,7 +96,7 @@ export default function Nav() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
