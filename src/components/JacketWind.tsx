@@ -2,8 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
-// Work in the original artwork's coordinates. Only the lower jacket is warped.
-const PATCH = { x: 1080, y: 310, width: 310, height: 190 };
+// Hard bounds keep the entire waist and trousers outside the animation.
+const PATCH = { x: 1080, y: 310, width: 310, height: 123 };
+const OUTER_EDGES = [
+  [[1160, 337], [1190, 337], [1150, 433], [1116, 433], [1116, 410]],
+  [[1308, 335], [1336, 335], [1364, 433], [1320, 433]],
+] as const;
 const COLUMNS = 20;
 const ROWS = 16;
 const smooth = (a: number, b: number, x: number) => {
@@ -85,18 +89,31 @@ export default function JacketWind() {
     function deform(point: Point, row: number): Point {
       const x = point.x + PATCH.x;
       const y = point.y + PATCH.y;
-      const height = Math.max(0, Math.min(1, (y - 334) / 115));
-      // Pin the cloth beneath the folded arms and release it towards the hems.
-      const bottom = 1 - smooth(450, 480, y);
-      const left = 1 - smooth(25, 46, Math.abs(x - (1190 - 36 * height)));
-      const right = 1 - smooth(60, 82, Math.abs(x - 1275));
+      const height = Math.max(0, Math.min(1, (y - 334) / 99));
+      // A small horizontal flutter on the outer edges only. Both ends stay
+      // pinned, and there is no vertical displacement towards the waistband.
+      const bottom = 1 - smooth(414, 433, y);
+      const left = 1 - smooth(12, 24, Math.abs(x - (1176 - 39 * height)));
+      const right = 1 - smooth(10, 27, Math.abs(x - (1317 + 19 * height)));
       const dx = (panels[0][row].x * left + panels[1][row].x * right) * bottom;
-      return { x: point.x + dx, y: point.y - Math.abs(dx) * 0.19 };
+      return { x: point.x + dx, y: point.y };
     }
 
     function paint() {
       if (!context) return;
       context.clearRect(0, 0, PATCH.width, PATCH.height);
+      context.save();
+      context.beginPath();
+      // Clip in destination coordinates BEFORE any texture transform. Nothing
+      // can be painted in the center of the body, or below the jacket edges.
+      for (const edge of OUTER_EDGES) {
+        edge.forEach(([x, y], index) => {
+          if (index === 0) context.moveTo(x - PATCH.x, y - PATCH.y);
+          else context.lineTo(x - PATCH.x, y - PATCH.y);
+        });
+        context.closePath();
+      }
+      context.clip();
       const vertices = Array.from({ length: ROWS + 1 }, (_, row) =>
         Array.from({ length: COLUMNS + 1 }, (_, column) => {
           const source = { x: column * PATCH.width / COLUMNS, y: row * PATCH.height / ROWS };
@@ -113,6 +130,7 @@ export default function JacketWind() {
           triangle(b.source, d.source, c.source, b.target, d.target, c.target);
         }
       }
+      context.restore();
       painted = true;
     }
 
@@ -129,14 +147,14 @@ export default function JacketWind() {
       for (let panel = 0; panel < panels.length; panel++) {
         for (let row = 0; row <= ROWS; row++) {
           const y = PATCH.y + row * PATCH.height / ROWS;
-          const height = Math.max(0, Math.min(1, (y - 334) / 115));
+          const height = Math.max(0, Math.min(1, (y - 334) / 99));
           const free = height ** 1.8;
-          // One wind direction, followed by a smaller trailing gust. Lower
-          // fabric catches later; the two panels carry different weight.
+          // One gentle gust and a smaller trailing flutter, confined to
+          // the outer jacket strips by the fixed paint mask.
           const force = windAt(elapsed - height * 0.2 - panel * 0.11);
           const ripple = Math.sin(elapsed * 10.5 - height * 4.8 + panel * 0.8)
             + 0.35 * Math.sin(elapsed * 17 - height * 6);
-          const target = (-(panel === 0 ? 20 : 10) + ripple * 2.3 * height) * force * free;
+          const target = (-(panel === 0 ? 12 : 6) + ripple * 1.1 * height) * force * free;
           const spring = panels[panel][row];
           const stiffness = panel === 0 ? 43 : 55;
           const damping = panel === 0 ? 7.5 : 9;
