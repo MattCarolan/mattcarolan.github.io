@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <defs>
-    <radialGradient id="left-hem"><stop stop-color="#ed6880"/><stop offset=".35" stop-color="#cb7480"/><stop offset="1" stop-color="#808080"/></radialGradient>
-    <radialGradient id="right-hem"><stop stop-color="#187080"/><stop offset=".35" stop-color="#447880"/><stop offset="1" stop-color="#808080"/></radialGradient>
-  </defs>
-  <path fill="#808080" d="M0 0h1600v900H0z"/>
-  <ellipse cx="1145" cy="410" rx="38" ry="65" fill="url(#left-hem)"/>
-  <ellipse cx="1324" cy="410" rx="36" ry="62" fill="url(#right-hem)"/>
-</svg>

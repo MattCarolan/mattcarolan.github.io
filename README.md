@@ -10,7 +10,7 @@ Personal portfolio for Matt Carolan, built with Next.js and published to GitHub 
 
 ## Artwork and design
 
-The original `public/1.jpeg` is reused without redrawing or stretching the character. An SVG clip animates the right foot. A small canvas maps the original fabric onto two narrow, hard-clipped strips along the jacket's outer edges. Gentle horizontal gusts and a trailing flutter settle back to the still image. The canvas ends above the trousers, and its fixed output mask excludes the center of the body. The face, arms, waistband and trousers are never animated. Animation pauses off screen and in background tabs; reduced-motion preferences show the unchanged still image. Keep the original file and its 16:9 aspect ratio.
+The original `public/1.jpeg` is reused without redrawing or stretching the character. The jacket remains still. An SVG clip animates only the right foot; reduced-motion preferences show the unchanged still image. Keep the original file and its 16:9 aspect ratio.
 
 The book uses the supplied front cover at `public/assets/book-cover.jpg`, with a CSS spine. No page block is shown. Brookfield uses the supplied white wordmark on a blue square at `public/assets/brookfield.png`.
 
