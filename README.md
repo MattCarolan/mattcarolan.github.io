@@ -10,7 +10,7 @@ Personal portfolio for Matt Carolan, built with Next.js and published to GitHub 
 
 ## Artwork and design
 
-The original `public/1.jpeg` is reused without redrawing or stretching the character. SVG clips animate only the right foot and jacket hems; reduced-motion preferences show the unchanged still image. Keep the original file and its 16:9 aspect ratio.
+The original `public/1.jpeg` is reused without redrawing or stretching the character. SVG clips animate the right foot, and a localized displacement map gives the jacket hems occasional short gusts separated by still periods; reduced-motion preferences show the unchanged still image. Keep the original file and its 16:9 aspect ratio.
 
 The book uses the supplied front cover at `public/assets/book-cover.jpg`, with a CSS spine. No page block is shown. Brookfield uses the supplied white wordmark on a blue square at `public/assets/brookfield.png`.
 

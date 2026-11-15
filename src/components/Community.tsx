@@ -95,55 +95,6 @@ export default function Community() {
       </h2>
 
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-12">
-        {/* Events */}
-        <div>
-          <h3 className="font-mono text-faint text-sm uppercase tracking-widest mb-6">
-            Events &amp; Conferences
-          </h3>
-          <div className="space-y-6">
-            {events.map((event) => (
-              <div
-                key={event.name}
-                className="border-l-2 border-surface2 hover:border-accent pl-6 transition-colors duration-300 group"
-              >
-                <div className="event-heading">
-                  {event.url ? (
-                    <a
-                      href={event.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-bright font-semibold group-hover:text-accent transition-colors duration-200 hover:underline inline-flex items-center gap-1"
-                    >
-                      {event.name}
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                      </svg>
-                    </a>
-                  ) : (
-                    <h4 className="text-bright font-semibold group-hover:text-accent transition-colors duration-200">
-                      {event.name}
-                    </h4>
-                  )}
-                  <span className="font-mono text-xs text-accent bg-accent/10 px-2 py-1 rounded self-start">
-                    {event.role}
-                  </span>
-                </div>
-                <p className="text-muted text-sm leading-relaxed">
-                  {event.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 bg-surface rounded-lg p-6 border border-surface2 hover:border-accent/30 transition-colors">
-            <div className="flex items-center gap-3 mb-3 text-accent"><WhatsAppIcon /><h4 className="text-bright font-semibold">Join the WhatsApp Community</h4></div>
-            <p className="text-muted text-sm leading-relaxed mb-4">Connect with cloud professionals, ask questions, and stay up to date with Cloud &amp; AI.</p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-accent hover:underline">Join WhatsApp Group ↗</a>
-          </div>
-        </div>
-
         {/* Media */}
         <div>
           <h3 className="font-mono text-faint text-sm uppercase tracking-widest mb-6">
@@ -204,6 +155,57 @@ export default function Community() {
               </svg>
             </a>
           </div>
+
+          <div id="community-invite" className="mt-8 bg-surface rounded-lg p-6 border border-surface2 hover:border-accent/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3 text-accent"><WhatsAppIcon /><h4 className="text-bright font-semibold">Join the WhatsApp Community</h4></div>
+            <p className="text-muted text-sm leading-relaxed mb-4">Connect with cloud professionals, ask questions, and stay up to date with Cloud &amp; AI.</p>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-accent hover:underline">Join WhatsApp Group ↗</a>
+          </div>
+        </div>
+
+        {/* Events */}
+        <div>
+          <h3 className="font-mono text-faint text-sm uppercase tracking-widest mb-6">
+            Events &amp; Conferences
+          </h3>
+          <div className="space-y-6">
+            {events.map((event) => (
+              <div
+                key={event.name}
+                className="border-l-2 border-surface2 hover:border-accent pl-6 transition-colors duration-300 group"
+              >
+                <div className="event-heading">
+                  {event.url ? (
+                    <a
+                      href={event.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-bright font-semibold group-hover:text-accent transition-colors duration-200 hover:underline inline-flex items-center gap-1"
+                    >
+                      {event.name}
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <h4 className="text-bright font-semibold group-hover:text-accent transition-colors duration-200">
+                      {event.name}
+                    </h4>
+                  )}
+                  <span className="font-mono text-xs text-accent bg-accent/10 px-2 py-1 rounded self-start">
+                    {event.role}
+                  </span>
+                </div>
+                <p className="text-muted text-sm leading-relaxed">
+                  {event.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+
         </div>
       </div>
     </section>

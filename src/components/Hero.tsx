@@ -6,10 +6,15 @@ export default function Hero() {
       <Image src="/1.jpeg" alt="Matt Carolan standing with folded arms, headphones, a dark jacket and sneakers against Vancouver's waterfront at night." width={1600} height={900} priority sizes="100vw" className="hero-original" />
       <svg viewBox="0 0 1600 900" className="hero-motion" aria-hidden="true">
         <defs>
-          <clipPath id="matt-jacket-hem"><path d="M1148 336 1180 353 1172 425 1130 452 1126 435Z M1307 324 1336 315 1344 445 1310 451 1301 418Z" /></clipPath>
+          <filter id="jacket-wind" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900" colorInterpolationFilters="sRGB">
+            <feImage href="/assets/jacket-wind-map.svg" x="0" y="0" width="1600" height="900" preserveAspectRatio="none" result="wind-map" />
+            <feDisplacementMap in="SourceGraphic" in2="wind-map" scale="0" xChannelSelector="R" yChannelSelector="G">
+              <animate attributeName="scale" values="0;0;12;5;15;3;8;0;0" keyTimes="0;0.58;0.62;0.65;0.69;0.73;0.77;0.84;1" dur="14.7s" repeatCount="indefinite" />
+            </feDisplacementMap>
+          </filter>
           <clipPath id="matt-right-foot"><path d="M1144 748 1206 754 1210 839 1042 841 1042 801 1080 778 1117 775Z" /></clipPath>
         </defs>
-        <g clipPath="url(#matt-jacket-hem)"><image href="/1.jpeg" width="1600" height="900" className="jacket-breeze" /></g>
+        <image href="/1.jpeg" width="1600" height="900" filter="url(#jacket-wind)" />
         <g clipPath="url(#matt-right-foot)"><image href="/1.jpeg" width="1600" height="900" className="right-foot-tap" /></g>
       </svg>
     </div>
