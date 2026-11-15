@@ -144,11 +144,12 @@ html:has(.contact-dialog[open]) { overflow:hidden; }
  .book-layout { grid-template-columns:minmax(90px,.9fr) minmax(0,1fr); }
 }
 @media(max-width:767px) {
+ /* Keep the portrait and copy in one layered hero on phones. */
  .hero-section { min-height:0; height:auto; padding-top:0; display:block; }
- .hero-artwork { position:relative; width:100%; left:auto; right:auto; top:auto; margin-top:72px; aspect-ratio:16/9; }
- .hero-shade { background:linear-gradient(0deg,transparent 0%,transparent 65%,#0e182d44 100%); }
- .hero-artwork::after { content:""; position:absolute; inset:60% 0 0; background:linear-gradient(0deg,var(--navy),transparent); }
- .hero-copy { padding:16px 24px 48px; }
+ .hero-artwork { position:absolute; width:100%; height:calc(100% - 72px); left:0; right:auto; top:72px; aspect-ratio:auto; overflow:hidden; }
+ .hero-original,.hero-motion { width:auto; max-width:none; height:100%; aspect-ratio:16/9; inset:0 auto auto 70%; transform:translateX(-70%); }
+ .hero-shade { background:linear-gradient(0deg,var(--navy) 0%,rgba(14,24,45,.9) 16%,rgba(14,24,45,.78) 48%,rgba(14,24,45,.08) 80%,rgba(14,24,45,.2) 100%); }
+ .hero-copy { padding:300px 24px 48px; }
  .hero-copy h1 { font-size:clamp(42px,10vw,62px); }
  .hero-copy h2 { font-size:clamp(25px,6.5vw,36px); max-width:100%; }
  .hero-title-break { display:none; }
