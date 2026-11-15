@@ -158,7 +158,7 @@ export default function Community() {
 
           <div id="community-invite" className="mt-8 bg-surface rounded-lg p-6 border border-surface2 hover:border-accent/30 transition-colors">
             <div className="flex items-center gap-3 mb-3 text-accent"><WhatsAppIcon /><h4 className="text-bright font-semibold">Join the WhatsApp Community</h4></div>
-            <p className="text-muted text-sm leading-relaxed mb-4">Connect with cloud professionals, ask questions, and stay up to date with Cloud &amp; AI.</p>
+            <p className="text-muted text-sm leading-relaxed mb-4">Run by Matt Carolan. Connect with cloud and AI professionals, ask questions, and keep learning together.</p>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-accent hover:underline">Join WhatsApp Group ↗</a>
           </div>
         </div>
