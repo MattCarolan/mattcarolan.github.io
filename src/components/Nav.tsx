@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -43,10 +44,17 @@ export default function Nav() {
         <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           <a
             href="#"
-            className="font-mono text-accent text-xl font-bold tracking-wider hover:opacity-80 transition-opacity"
+            className="block w-7 h-7 shrink-0 hover:opacity-80 transition-opacity"
             aria-label="Matt Carolan home"
           >
-            MC
+            <Image
+              src="/assets/matt-avatar.webp"
+              alt=""
+              width={28}
+              height={28}
+              className="w-7 h-7 rounded-full object-cover"
+              priority
+            />
           </a>
 
           {/* Desktop nav */}
