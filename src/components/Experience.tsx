@@ -31,7 +31,7 @@ const clients = [
     description:
       "Supported the migration of three data centers to the cloud.",
     url: "https://www.brookfield.com",
-    logo: "/assets/brookfield.png",
+    logo: "/assets/brookfield.webp",
   },
   {
     name: "WorkSafeBC",
@@ -47,7 +47,7 @@ const clients = [
     description:
       "Advised on data privacy and HIPAA-compliant data pipelines across cloud and hybrid environments.",
     url: "https://www.bcbs.com",
-    logo: "/logos/bcbs.png",
+    logo: "/logos/bcbs.webp",
   },
 ];
 

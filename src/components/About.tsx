@@ -74,7 +74,7 @@ export default function About() {
             <div className="book-layout">
               <a href="https://5000days.net/" target="_blank" rel="noopener noreferrer" className="book-object" aria-label="Explore 5,000 Days">
                 <span className="book-spine" aria-hidden="true">5,000 DAYS <small>MATT CAROLAN</small></span>
-                <img src="/assets/book-cover.jpg" alt="5,000 Days: Cloud, AI, Culture, History & Future, by Matt Carolan - original front cover." width="800" height="1199" loading="lazy" />
+                <img src="/assets/book-cover-800.webp" srcSet="/assets/book-cover-320.webp 320w, /assets/book-cover-480.webp 480w, /assets/book-cover-800.webp 800w" sizes="(max-width: 767px) 40vw, (max-width: 1023px) 18vw, 15vw" alt="5,000 Days: Cloud, AI, Culture, History & Future, by Matt Carolan - original front cover." width="800" height="1199" loading="lazy" decoding="async" style={{ aspectRatio: "800 / 1199" }} />
               </a>
               <div className="book-details">
                 <p className="font-mono text-accent text-xs uppercase tracking-wider mb-2">New Book</p>

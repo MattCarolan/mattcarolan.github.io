@@ -53,7 +53,7 @@ export default function Nav() {
               width={28}
               height={28}
               className="w-7 h-7 rounded-full object-cover"
-              priority
+              loading="eager"
             />
           </a>
 
